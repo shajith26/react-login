@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 const Login = () => {
 
   const [username, setusername]= useState("");
+  const [user,addUser]=useState([]);
   const [userpwd, setpassword]=useState("");
   const [error, seterror]=useState('');
 
@@ -19,14 +20,20 @@ const Login = () => {
   // };
   const handleSubmit = (ev) => {
     ev.preventDefault();
-    if(username==="" || userpwd===""){
-      seterror("invalid user id or password");
-      return;
-    }
-      seterror(""); 
+    // if(username==="" || userpwd===""){
+    //   seterror("invalid user id or password");
+    //   return;
+    // }
+      // seterror(""); 
+
+      const users={
+        username:username,
+        userpwd:userpwd
+      }
+      addUser([...user,addUser]);    
     
      
-    console.log("state",username,userpwd);
+    console.log("state",users);
   }
 
   const handleInputChange = (ev) => {
