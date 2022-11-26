@@ -24,16 +24,17 @@ const Login = () => {
     //   seterror("invalid user id or password");
     //   return;
     // }
-      // seterror(""); 
+      seterror(""); 
 
-      const users={
+
+      const temp={
         username:username,
         userpwd:userpwd
       }
-      addUser([...user,addUser]);    
+      addUser([...user,temp]);    
     
      
-    console.log("state",users);
+    console.log("state",temp);
   }
 
   const handleInputChange = (ev) => {
@@ -52,7 +53,7 @@ const Login = () => {
 
   return (
     <div>
-        <div>Login</div>
+        <div>Login</div> 
         <form onSubmit={handleSubmit}>
         <div><input placeholder={"ID"} name="name" onChange={handleInputChange} /></div>
         <div><input placeholder={"password"} type="password" name="password" onChange={handleInputChange} /></div>
